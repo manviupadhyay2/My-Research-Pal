@@ -89,14 +89,13 @@ function Features() {
         <h1 className="text-4xl font-bold mb-12 text-primary text-center">Our Features</h1>
         <div className="relative flex flex-col items-center">
           {/* Timeline Line */}
-          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 bg-primary h-full" style={{ transition: 'background-color 0.5s' }}></div>
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 bg-primary h-full"></div>
           {/* Feature Boxes */}
           {features.map((feature, index) => (
             <div
               key={index}
               data-index={index}
               className={`feature-box relative flex items-start mb-16 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} transition-transform duration-500 ${isVisible[index] ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}
-              style={{ paddingTop: '1rem', paddingBottom: '1rem' }}
             >
               <div className="flex-shrink-0 w-full md:w-2/3 p-6 bg-white border-2 border-primary rounded-lg shadow-xl transform transition-transform duration-500 hover:scale-105">
                 <div className="flex items-center mb-4">
@@ -126,6 +125,4 @@ function Features() {
 }
 
 export default Features;
-
-
 
