@@ -4,8 +4,7 @@ import { ResumeInfoContext } from '@/context/ResumeInfoContext'
 import ResumePreview from '@/dashboard/resume/components/ResumePreview'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import GlobalApi from 'C:/Users/Manvi Upadhyay/Desktop/New folder/my-research-pal/services/GlobalApi.js'
-
+import GlobalApi from 'C:/Users/Manvi Upadhyay/Desktop/New folder/my-research-pal/services/GlobalApi.js';
 import { RWebShare } from 'react-web-share'
 
 function ViewResume() {
