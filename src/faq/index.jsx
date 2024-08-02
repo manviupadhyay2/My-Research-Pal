@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '@/components/custom/Header';
 import Footer from '@/components/custom/Footer';
 import * as Collapsible from '@radix-ui/react-collapsible';
@@ -32,7 +32,8 @@ function ChevronUpIcon(props) {
 }
 
 function FAQ() {
-  const [openIndex, setOpenIndex] = React.useState(null);
+  const [openIndex, setOpenIndex] = useState(null);
+  const [doubt, setDoubt] = useState('');
 
   const faqs = [
     {
@@ -56,6 +57,12 @@ function FAQ() {
       answer: 'Simply sign up on our website, create a profile, and start exploring personalized recommendations as per convenience.'
     },
   ];
+
+  const handlePost = () => {
+    // Handle posting the doubt (e.g., validation or API call)
+    console.log('Doubt posted:', doubt);
+    setDoubt('');
+  };
 
   return (
     <div>
@@ -85,6 +92,22 @@ function FAQ() {
             </Collapsible.Root>
           </div>
         ))}
+        <div className="mt-8">
+          <h2 className="text-2xl font-bold mb-4 text-center">Have a Doubt?</h2>
+          <textarea
+            value={doubt}
+            onChange={(e) => setDoubt(e.target.value)}
+            rows="4"
+            placeholder="Write your doubt here..."
+            className="w-full p-4 border rounded-lg mb-4"
+          />
+          <button
+            onClick={handlePost}
+            className="w-full py-3 px-5 text-base font-medium text-center text-white bg-primary rounded-lg hover:bg-primary-dark focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
+          >
+            Post
+          </button>
+        </div>
       </main>
 
       <Footer />

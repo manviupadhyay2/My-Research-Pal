@@ -6,13 +6,14 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import SignInPage from './auth/sign-in/index.jsx';
 import Home from './home/index.jsx';
 import Dashboard from './dashboard/index.jsx';
-import EditResume from './dashboard/resume/[resumeId]/edit/index.jsx';
-import ViewResume from './my-resume/[resumeId]/view/index.jsx';
 import AboutUs from './aboutUs/index.jsx';
 import Features from './features/index.jsx';
 import FAQ from './faq/index.jsx';
 import { ClerkProvider } from '@clerk/clerk-react';
 import PaperRecommendationPanel from './paperRecommendation/index.jsx';
+import PaperReview from './paperReview/index.jsx';
+import PaperEdit from './dashboard/researchPaper/[paperId]/edit/index.jsx'; // Updated import
+
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
 const router = createBrowserRouter([
@@ -28,18 +29,14 @@ const router = createBrowserRouter([
         element: <Dashboard />,
       },
       {
-        path: '/dashboard/resume/:resumeId/edit',
-        element: <EditResume />,
+        path: '/dashboard/researchPaper/:paperId/edit',
+        element: <PaperEdit />,
       },
     ],
   },
   {
     path: '/auth/sign-in',
     element: <SignInPage />,
-  },
-  {
-    path: '/my-resume/:resumeId/view',
-    element: <ViewResume />,
   },
   {
     path: '/aboutUs',
@@ -55,7 +52,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/paperRecommendation',
-    element:<PaperRecommendationPanel/>,
+    element: <PaperRecommendationPanel />,
+  },
+  {
+    path: '/paperReview',
+    element: <PaperReview />,
   },
 ]);
 
@@ -64,5 +65,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
       <RouterProvider router={router} />
     </ClerkProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 );

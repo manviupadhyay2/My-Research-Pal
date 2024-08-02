@@ -83,7 +83,7 @@ const Home = () => {
 
         <section className="py-8 bg-white z-50 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
           <h2 className="font-bold text-3xl">How it Works?</h2>
-          <h2 className="text-md text-gray-500">Give mock interview in just 3 simple easy steps</h2>
+          <h2 className="text-md text-gray-500">Find research paper for any topic</h2>
           <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             <a className="block rounded-xl border bg-white border-gray-200 p-8 shadow-lg transition hover:border-pink-500/10 hover:shadow-pink-500/10" href="#">
               <AtomIcon className='h-8 w-8 text-primary' />
@@ -107,6 +107,15 @@ const Home = () => {
         <section className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
           <Link to="/paperRecommendation" className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary hover:bg-primary-dark focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
             Go to Paper Recommendation
+            <svg className="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
+            </svg>
+          </Link>
+        </section>
+        {/* New Button Section */}
+        <section className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
+          <Link to="/paperReview" className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary hover:bg-primary-dark focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+            Review Your Paper
             <svg className="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
             </svg>
