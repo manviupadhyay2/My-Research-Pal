@@ -12,8 +12,8 @@ function PaperRecommendationPanel() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    
-    const prompt = `Give me ${paperCount} research paper response${paperCount > 1 ? 's' : ''} in an array related to the following abstract for leaf disease detection with "paperTitle","paperGenre","authorName","journalName","journalLink" give me actual link that are available as fields and give me proper ${paperCount} response suggestion${paperCount > 1 ? 's' : ''}. Don't give any other text, only show papers before 2021`;
+
+    const prompt = `Give me ${paperCount} research paper response${paperCount > 1 ? 's' : ''} in an array related to the following abstract for "${abstract}" with "paperTitle","paperGenre","authorName","journalName","journalLink" give me actual link that are available as fields and give me proper ${paperCount} response suggestion${paperCount > 1 ? 's' : ''}. Don't give any other text, only show papers before 2021`;
 
     try {
       const result = await AIChatSession.sendMessage(prompt);
